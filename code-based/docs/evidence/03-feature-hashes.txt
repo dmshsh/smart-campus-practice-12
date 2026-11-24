@@ -1,0 +1,9 @@
+src/App.tsx d77062b49a29
+src/index.css 6a1555b76fc9
+src/explain.js 2e56ecd4197a
+src/explain.d.ts 3d6c53b22fdc
+src/mockAdapter.js f117c5e47d7c
+src/mockAdapter.d.ts 2c8c9f52badc
+src/explain.test.js cee37082bdee
+package.json 89aa17a7f3f7
+AGENTS.md d9060d27cbfa

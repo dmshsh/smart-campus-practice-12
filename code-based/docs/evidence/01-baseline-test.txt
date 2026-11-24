@@ -1,0 +1,51 @@
+
+> vite-react-typescript-starter@0.0.0 test
+> node --test src/availability.test.js src/time.test.js
+
+✔ AC1: rejects start === end (zero-length interval) (3.105ms)
+✔ AC1: rejects a reversed interval (end before start) (0.640001ms)
+✔ AC1: rejects a request in the past (start before NOW) (0.785ms)
+✔ AC1: a request starting exactly at NOW is not "in the past" (documents current behavior) (0.665ms)
+✔ AC2: accepts exactly 120 minutes (0.699999ms)
+✔ AC2: rejects 121 minutes (0.475001ms)
+✔ AC3: rejects a blocked room even for an otherwise valid, free slot (0.415ms)
+✔ AC4: rejects a request fully inside an existing booking (0.77ms)
+✔ AC4: rejects a request overlapping the start of a booking (1.070001ms)
+✔ AC4: rejects a request overlapping the end of a booking (0.815ms)
+✔ AC4: rejects a 1-minute overlap with the first booking (10:59-12:00 vs 10:00-11:00) (0.53ms)
+✔ AC4: rejects a 1-minute overlap with the second booking (12:00-13:01 vs 13:00-14:00) (0.47ms)
+✔ AC4: allows a request that starts exactly when a booking ends (11:00-12:00) (0.870001ms)
+✔ AC4: allows a request that ends exactly when a booking starts (12:00-13:00) (0.404999ms)
+✔ AC4: allows a request touching two bookings at both endpoints (11:00-13:00) (0.600001ms)
+✔ AC4: allows a request ending exactly when the first booking starts (09:00-10:00) (1.130001ms)
+✔ AC4: a booking of another room (R-202, 15:00-16:00) does not block R-101 (0.334999ms)
+✔ AC4: the same slot is rejected for the room that owns the booking (R-202) (0.535001ms)
+✔ AC5: does not mutate the bookings array (order and content) (3.630001ms)
+✔ AC5: works on a frozen bookings array (any write would throw in strict mode) (1.105ms)
+✔ AC5: booking fixtures keep their exact values and order after many checks (0.71ms)
+✔ fixtures: ROOM, BOOKINGS and every booking are frozen (0.645ms)
+✔ parses 09:30 (3.099999ms)
+✔ parses 00:00 (midnight) (0.375ms)
+✔ parses 23:59 (last minute) (0.315ms)
+✔ returns NaN for "" (0.45ms)
+✔ returns NaN for "9" (0.320001ms)
+✔ returns NaN for "10" (0.399999ms)
+✔ returns NaN for "9:30" (0.245ms)
+✔ returns NaN for "24:00" (0.434999ms)
+✔ returns NaN for "12:60" (0.589999ms)
+✔ returns NaN for "25:99" (0.305ms)
+✔ returns NaN for "ab:cd" (0.375ms)
+✔ returns NaN for " 09:30" (0.329999ms)
+✔ returns NaN for undefined (0.405ms)
+✔ returns NaN for null (0.350001ms)
+✔ returns NaN for 930 (0.160001ms)
+✔ uses the day argument (2026-10-28 differs from 2026-10-27) (0.400001ms)
+✔ returns NaN when the day argument is malformed (0.955ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2440.464999
